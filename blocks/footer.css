@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+.footer__copyright {
+  margin: 0 auto;
+  width: 166px;
+  height: 16px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: center;
+  margin-bottom: 24px;
+}

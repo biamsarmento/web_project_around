@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+/* .nav__logo {
+  width: 254px;
+  height: 70px;
+  margin-bottom: 90px;
+} */
+
+@media (min-width: 320px){
+
+  .nav__logo {
+    max-width: 188px;
+    /* max-height: 52px; */
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 544px){
+
+  .nav__logo {
+    max-width: 254px;
+    /* max-height: 66px; */
+    margin-bottom: 90px;
+  }
+}
+
+@media (min-width: 1024px){
+
+  .nav__logo {
+    max-width: 254px;
+    /* max-height: 70px; */
+    margin-bottom: 90px;
+  }
+}
