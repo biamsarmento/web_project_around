@@ -5,19 +5,36 @@
   position: relative;
 }
 
+.nav__logo-link {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.nav__logo {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
 @media (min-width: 320px){
 
-  .nav__logo {
+  .nav__logo-link {
     margin-bottom: 32px;
-    max-width: 126px;
     margin-left: 27px;
+  }
+
+  .nav__logo {
+    max-width: 126px;
   }
 }
 
 @media (min-width: 880px){
 
-  .nav__logo {
+  .nav__logo-link {
+    margin: 0;
     margin-bottom: 41px;
+  }
+
+  .nav__logo {
     max-width: 173px;
   }
 }

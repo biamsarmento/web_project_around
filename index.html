@@ -27,6 +27,19 @@
         </div>
       </header>
       <main class="content">
+        <section class="popup popup_disabled" id="popup">
+          <div class="popup__container">
+            <button class="popup__close-button"></button>
+            <h2 class="popup__title">Editar Perfil</h2>
+            <form class="popup__form form">
+              <fieldset class="form__fieldset">
+                <input type="text" class="form__input form__input_type_name" id="nome" name="nome" value="Jacques Cousteau" required>
+                <input type="text" class="form__input form__input_type_activity" id="atividade" name="atividade" value="Explorar" required>
+              </fieldset>
+            </form>
+            <button type="submit" class="popup__submit-button">Salvar</button>
+          </div>
+        </section>
         <section class="profile" id="profile">
           <img
             src="./images/Avatar.png"
@@ -36,7 +49,7 @@
           <div class="profile__info">
             <h1 class="profile__info-title">Jacques Cousteau</h1>
             <button class="profile__info-edit-button"></button>
-            <p class="profile__info-explore">Explorar</p>
+            <p class="profile__info-activity">Explorar</p>
           </div>
           <button class="profile__add-button"></button>
         </section>
@@ -115,5 +128,6 @@
         </div>
       </footer>
     </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
