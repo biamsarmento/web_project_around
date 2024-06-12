@@ -1,261 +1,52 @@
 .card {
-  display: grid;
-}
-
-.card_position:last-of-type {
-  margin-bottom: 90px;
-}
-
-.card__title {
-  font-family: "Inter", Arial, sans-serif;
-  font-weight: 900;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  max-width: 460px;
-  vertical-align: bottom;
-}
-
-.card__artist {
+  border-radius: 10px;
+  width: 282px;
+  height: 361px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px 0px #00000026;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content:flex-end;
-}
-
-.card__artist-title {
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14.52px;
-  letter-spacing: 0.12em;
-  text-align: left;
-  margin: 0;
-  color: #AAAAAA;
-}
-
-.card__artist-name {
-  font-family: "Inter", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 22px;
-  text-align: left;
-  margin: 0;
+  justify-content: flex-start;
+  gap: 25px;
 }
 
 .card__image {
-  margin: 0;
-  padding: 0;
+  border-radius: 10px, 10px, 0, 0;
+  width: 282px;
+  height: 282px;
 }
 
-.card__image:hover {
-  background: #00000080;
-  opacity: 0.5;
-}
-
-.card__paragraph {
-  font-family: "Inter", Arial, sans-serif;
-  font-weight: 400;
-  text-align: left;
+.card__tag {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 246px;
   margin: 0 auto;
 }
 
-.card__paragraph:last-of-type {
-  margin-bottom: 0;
-}
-
-.card__button {
-  box-sizing: border-box;
-  text-decoration: none;
-  color: #FFFFFF;
+.card__tag-title {
   font-family: "Inter", Arial, sans-serif;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
   text-align: left;
-  vertical-align: middle;
   margin: 0;
-  background: linear-gradient(90deg, #0278FE 0%, #003A7B 99.98%);
-  border-radius: 4px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: calc(246px - 21px);
 }
 
-.card__button:hover {
-  background: linear-gradient(90deg, rgba(2, 120, 254, 0.25) 0%, rgba(0, 58, 123, 0.25) 99.98%);
-}
-
-@media (min-width: 320px){
-
-  .card {
-    grid-row-gap: 30px;
-    grid-template-columns: auto;
-    grid-template-rows: repeat(5, auto);
-  }
-
-  .card__title {
-    font-size: 32px;
-    line-height: 35px;
-    vertical-align: bottom;
-    margin: 0 16px;
-  }
-
-  .card__artist {
-    margin: 0 16px;
-  }
-
-  .card__text {
-    margin: 0 16px;
-  }
-
-  .card__paragraph {
-    font-size: 16px;
-    line-height: 26.08px;
-    margin-bottom: 25px;
-  }
-
-  .card__image {
-    width: 100%;
-  }
-
-  .card__button {
-    font-size: 14px;
-    line-height: 16.94px;
-    padding: 13px 20px 13px 20px;
-    max-height: 48px;
-    margin: 0 16px;
-    max-width: 288px;
-  }
-}
-
-@media (min-width: 544px){
-  .card {
-    grid-column-gap: 28px;
-    grid-row-gap: 48px;
-    grid-template-columns: 270px auto;
-    grid-template-rows: auto 270px auto;
-  }
-
-  .card__title {
-    font-size: 42px;
-    line-height: 46px;
-    max-width: 340px;
-    vertical-align: bottom;
-    margin: 0;
-  }
-
-  .card__text {
-    grid-column: 2;
-    grid-row: 2 / -1;
-    margin: 0;
-  }
-
-  .card__paragraph {
-    font-size: 16px;
-    line-height: 26.08px;
-    margin: 0;
-    margin-bottom: 25px;
-  }
-
-  .card__image {
-    width: 270px;
-    height: 270px;
-    background: #000000;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.50);
-  }
-
-  .card__button {
-    font-size: 14px;
-    line-height: 19px;
-    padding: 13px 12px 13px 12px;
-    max-width: 100%;
-    max-height: 48px;
-    margin: 0;
-  }
-}
-
-@media (min-width: 650px){
-
-  .card {
-    grid-column-gap: 28px;
-    grid-row-gap: 48px;
-    grid-template-columns: 340px auto;
-    grid-template-rows: auto 340px auto;
-  }
-
-  .card__title {
-    font-size: 42px;
-    line-height: 46px;
-    max-width: 340px;
-    vertical-align: bottom;
-    margin: 0;
-  }
-
-  .card__text {
-    grid-column: 2;
-    grid-row: 2 / -1;
-    margin: 0;
-  }
-
-  .card__paragraph {
-    font-size: 16px;
-    line-height: 26.08px;
-    margin: 0;
-    margin-bottom: 25px;
-  }
-
-  .card__image {
-    width: 340px;
-    height: 340px;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.50);
-  }
-
-  .card__button {
-    font-size: 17px;
-    line-height: 21.78px;
-    padding: 13px 20px 13px 20px;
-    max-width: 100%;
-    max-height: 48px;
-    margin: 0;
-  }
-}
-
-@media (min-width: 1024px){
-
-  .card {
-    grid-column-gap: 40px;
-    grid-row-gap: 48px;
-    grid-template-columns: 460px auto;
-    grid-template-rows: auto 460px auto;
-  }
-
-  .card__title {
-    font-size: 72px;
-    line-height: 76px;
-    max-width: 460px;
-    vertical-align: bottom;
-  }
-
-  .card__text {
-    grid-column: 2;
-    grid-row: 2 / -1;
-    margin: 0;
-  }
-
-  .card__paragraph {
-    font-size: 18px;
-    line-height: 29.34px;
-    margin-bottom: 25px;
-  }
-
-  .card__image {
-    width: 100%;
-    height: 100%;
-    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.50);
-  }
-
-  .card__button {
-    font-size: 18px;
-    line-height: 21.78px;
-    padding: 13px 20px 13px 20px;
-    max-width: 356px;
-    max-height: 48px;
-    margin: 0;
-  }
+.card__tag-like {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  background-image: url("../images/Like.svg");
+  width: 21px;
+  height: 19px;
 }
