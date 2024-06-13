@@ -57,6 +57,10 @@
   opacity: 50%;
 }
 
+.card__tag-like_liked {
+  background-image: url("../images/Union.png");
+}
+
 .song__like {
   border: none;
   background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart.svg) center no-repeat;

@@ -1,5 +1,5 @@
-# Triple Homeland
-# Web Project Homeland
+# Triple Ten
+# Web Project Around
 
 Esse site mostra várias imagens e conta um pouco sobre cada cidade retratada na imagem.
 Neste projeto continuamos aprendendo sobre sobre responsividade. Aprendemos a usar GRID e aprendemos a estilizar um site usando gradiente e sombras.
