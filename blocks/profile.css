@@ -34,7 +34,6 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    /* margin: 0 19px; */
     padding: 0 19px;
   }
 
@@ -42,7 +41,7 @@
     display: grid;
     column-gap: 10px;
     row-gap: 14px;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(2, auto);
     grid-template-rows: 22px auto;
     margin: 0 auto;
     margin-bottom: 36px;
@@ -113,7 +112,6 @@
     grid-template-columns: repeat(2, auto);
     grid-template-rows: 39px auto;
     margin: 0;
-    /* margin-right: 165px; */
   }
 
   .profile__avatar {

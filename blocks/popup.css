@@ -46,6 +46,7 @@
   top: calc(((100vh - 330px) / 2) - 49px);
   right: calc(((100% - 430px) / 2) - 49px);
   cursor: pointer;
+  padding: 0;
 }
 
 .popup__close-button:hover{
@@ -121,6 +122,7 @@
     position: fixed;
     top: calc(((100vh - 322px) / 2) - 50px);
     right: calc((100% - 282px) / 2);
+    padding: 0;
   }
 
   .popup__title {
@@ -187,6 +189,7 @@
     position: fixed;
     top: calc(((100vh - 330px) / 2) - 49px);
     right: calc(((100% - 430px) / 2) - 49px);
+    padding: 0;
   }
 
   .popup__title {
