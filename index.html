@@ -40,6 +40,19 @@
             </form>
           </div>
         </section>
+        <section class="newCardPopup" id="newCardPopup">
+          <div class="newCardPopup__container">
+            <button class="newCardPopup__close-button"></button>
+            <h2 class="newCardPopup__title">Novo local</h2>
+            <form class="newCardPopup__form form-new-card">
+              <fieldset class="form-new-card__fieldset">
+                <input type="text" class="form-new-card__input form-new-card__input_type_title" id="titulo" name="titulo" placeholder="Title" required>
+                <input type="text" class="form-new-card__input form-new-card__input_type_url" id="url" name="url" placeholder="Image URL" required>
+              </fieldset>
+              <button type="submit" class="form-new-card__submit-button">Salvar</button>
+            </form>
+          </div>
+        </section>
         <section class="profile" id="profile">
           <img
             src="./images/Avatar.png"
@@ -54,72 +67,6 @@
           <button class="profile__add-button"></button>
         </section>
         <section class="elements" id="elements">
-          <div class="card">
-            <img
-              src="./images/image1.png"
-              alt="Imagem de um rio em uma floresta."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Vale de Yosemite</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/image2.png"
-              alt="Imagem de um rio em um lago be, azul e montanhas."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Lago Louise</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/image3.png"
-              alt="Imagem de montanhas e o pôr do sol."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Montanhas Shanandoah</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/image4.png"
-              alt="Imagem de montanhas e um céu estrelado."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Latemar</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/image5.png"
-              alt="Imagem de um lago e montanhas."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Vanoise National Park</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="./images/image6.png"
-              alt="Imagem de barcos em um lago e montanhas."
-              class="card__image"
-            />
-            <div class="card__tag">
-              <p class="card__tag-title">Lago di Braies</p>
-              <button class="card__tag-like"></button>
-            </div>
-          </div>
         </section>
       </main>
       <footer class="footer" id="footer">
@@ -128,6 +75,15 @@
         </div>
       </footer>
     </div>
+    <template id="card-template">
+      <div class="card">
+        <img class="card__image"/>
+        <div class="card__tag">
+          <p class="card__tag-title"></p>
+          <button class="card__tag-like"></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/script.js"></script>
   </body>
 </html>

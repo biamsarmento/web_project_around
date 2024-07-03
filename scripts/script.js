@@ -7,6 +7,38 @@ const closePopupButton = content.querySelector(".popup__close-button");
 const popup = content.querySelector(".popup");
 const likes = content.querySelectorAll(".card__tag-like");
 const form = content.querySelector(".form");
+const newCard = content.querySelector(".profile__add-button");
+const newCardPopup = content.querySelector(".newCardPopup");
+const closeNewCardPopupButton = content.querySelector(".newCardPopup__close-button");
+const formNewCard = content.querySelector(".form-new-card");
+const cards = content.querySelector(".elements");
+
+const initialCards = [
+  {
+    name: "Vale de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
+  },
+  {
+    name: "Montanhas Carecas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
+  },
+  {
+    name: "Parque Nacional da Vanoise ",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
+  }
+];
 
 function handlePopup() {
   popup.classList.toggle("popup_opened");
@@ -34,13 +66,60 @@ function handleSaveChanges(evt) {
   handlePopup();
 }
 
+function handleNewCardPopup() {
+  newCardPopup.classList.toggle("newCardPopup_opened");
+
+  const titulo = document.querySelector(".form-new-card__input_type_title");
+  const url = document.querySelector(".form-new-card__input_type_url");
+
+  titulo.value = "";
+  url.value = "";
+}
+
+function handleNewCard(evt) {
+
+  evt.preventDefault();
+
+  const titulo = document.querySelector(".form-new-card__input_type_title");
+  const url = document.querySelector(".form-new-card__input_type_url");
+
+  const cardTemplate = document.querySelector("#card-template").content;
+  const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+
+  cardElement.querySelector(".card__image").src = url.value;
+  cardElement.querySelector(".card__tag-title").textContent = titulo.value;
+
+  cardElement.querySelector(".card__tag-like").addEventListener("click", function (evt) {
+    evt.target.classList.toggle("card__tag-like_liked");
+  });
+
+  cards.prepend(cardElement);
+
+  handleNewCardPopup();
+}
+
+function loadInitialCards(initialCards) {
+  initialCards.forEach(card => {
+
+    const cardTemplate = document.querySelector("#card-template").content;
+    const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
+
+    cardElement.querySelector(".card__image").src = card.link;
+    cardElement.querySelector(".card__tag-title").textContent = card.name;
+
+    cardElement.querySelector(".card__tag-like").addEventListener("click", function (evt) {
+      evt.target.classList.toggle("card__tag-like_liked");
+    });
+
+    cards.append(cardElement);
+  });
+}
+
+loadInitialCards(initialCards);
+
 editButton.addEventListener('click', handlePopup);
 closePopupButton.addEventListener('click', handlePopup);
 form.addEventListener('submit', handleSaveChanges)
-
-likes.forEach(like => {
-  like.addEventListener('click', () => {
-      like.classList.toggle("card__tag-like_liked");
-  });
-});
-
+newCard.addEventListener('click', handleNewCardPopup);
+closeNewCardPopupButton.addEventListener('click', handleNewCardPopup);
+formNewCard.addEventListener('submit', handleNewCard);

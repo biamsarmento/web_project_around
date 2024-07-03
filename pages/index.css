@@ -4,9 +4,11 @@
 @import url("../blocks/content.css");
 @import url("../blocks/elements.css");
 @import url("../blocks/footer.css");
+@import url("../blocks/form-new-card.css");
 @import url("../blocks/form.css");
 @import url("../blocks/header.css");
 @import url("../blocks/nav.css");
+@import url("../blocks/newCardPopup.css");
 @import url("../blocks/page.css");
 @import url("../blocks/popup.css");
 @import url("../blocks/profile.css");
