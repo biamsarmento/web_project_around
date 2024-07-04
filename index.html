@@ -40,17 +40,24 @@
             </form>
           </div>
         </section>
-        <section class="newCardPopup" id="newCardPopup">
-          <div class="newCardPopup__container">
-            <button class="newCardPopup__close-button"></button>
-            <h2 class="newCardPopup__title">Novo local</h2>
-            <form class="newCardPopup__form form-new-card">
+        <section class="new-card-popup" id="new-card-popup">
+          <div class="new-card-popup__container">
+            <button class="new-card-popup__close-button"></button>
+            <h2 class="new-card-popup__title">Novo local</h2>
+            <form class="new-card-popup__form form-new-card">
               <fieldset class="form-new-card__fieldset">
                 <input type="text" class="form-new-card__input form-new-card__input_type_title" id="titulo" name="titulo" placeholder="Title" required>
                 <input type="text" class="form-new-card__input form-new-card__input_type_url" id="url" name="url" placeholder="Image URL" required>
               </fieldset>
               <button type="submit" class="form-new-card__submit-button">Salvar</button>
             </form>
+          </div>
+        </section>
+        <section class="image-popup" id="image-popup">
+          <div class="image-popup__container">
+            <img class="image-popup__picture">
+            <p class="image-popup__title"></p>
+            <button class="image-popup__close-button"></button>
           </div>
         </section>
         <section class="profile" id="profile">
@@ -77,7 +84,10 @@
     </div>
     <template id="card-template">
       <div class="card">
-        <img class="card__image"/>
+        <button class="card__delete-button"></button>
+        <button class="card__image-link">
+          <img class="card__image"/>
+        </button>
         <div class="card__tag">
           <p class="card__tag-title"></p>
           <button class="card__tag-like"></button>
