@@ -67,7 +67,6 @@
   align-self: flex-start;
   margin: 0;
   padding: 0;
-  align-self: flex-start;
   grid-column: 1;
   grid-row: 2;
 }
@@ -114,7 +113,6 @@
     align-self: flex-start;
     margin: 0;
     padding: 0;
-    align-self: flex-start;
     grid-column: 1;
     grid-row: 2;
   }
@@ -158,7 +156,6 @@
     line-height: 14.52px;
     text-align: left;
     color: #ffffff;
-    align-self: flex-start;
     margin: 0;
     padding: 0;
     align-self: flex-start;
