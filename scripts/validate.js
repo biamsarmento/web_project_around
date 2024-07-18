@@ -75,13 +75,13 @@
   };
 
   // Não sei pq não funciona... :(
-  export function formReset() {
-    const formList = Array.from(document.querySelectorAll(".form"));
-    formList.forEach((formElement) => {
-      formElement.reset();
-      console.log(formElement);
-      console.log("Resetando");
-    });
+  export function formReset(thisForm) {
+
+    form1 = document.querySelector("#form1");
+    form2 = document.querySelector("#form2");
+
+    form1.reset();
+    form2.reset();
   }
 
   // module.exports = formReset;
