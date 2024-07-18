@@ -20,15 +20,6 @@
     }
   };
 
-  // const setEventListeners = (formElement) => {
-  //   const inputList = Array.from(formElement.querySelectorAll(".form__input"));
-  //   inputList.forEach((inputElement) => {
-  //     inputElement.addEventListener("input", function () {
-  //       checkInputValidity(formElement, inputElement);
-  //     });
-  //   });
-  // };
-
   const hasInvalidInput = (inputList) => {
     return inputList.some((inputElement) => {
       return !inputElement.validity.valid;
@@ -69,32 +60,17 @@
       fieldsetList.forEach((fieldset) => {
         setEventListeners(fieldset);
       });
-
-      // setEventListeners(formElement);
     });
   };
 
   // Não sei pq não funciona... :(
   export function formReset(thisForm) {
 
-    form1 = document.querySelector("#form1");
-    form2 = document.querySelector("#form2");
+    form1 = document.querySelector('form[name="formPopup"]');
+    form2 = document.querySelector('form[name="formNewCard"]');
 
     form1.reset();
     form2.reset();
   }
 
-  // module.exports = formReset;
-
   enableValidation();
-
-  // enableValidation({
-  //   formSelector: ".popup__form",
-  //   inputSelector: ".popup__input",
-  //   submitButtonSelector: ".popup__button",
-  //   inactiveButtonClass: "popup__button_disabled",
-  //   inputErrorClass: "popup__input_type_error",
-  //   errorClass: "popup__error_visible"
-  // });
-
-  // export { formReset };
