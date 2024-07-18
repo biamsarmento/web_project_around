@@ -1,3 +1,5 @@
+import { formReset } from './validate.js';
+
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
 const profileName = content.querySelector(".profile__info-title");
@@ -11,10 +13,17 @@ const newCard = content.querySelector(".profile__add-button");
 const newCardPopup = content.querySelector(".new-card-popup");
 const closeNewCardPopupButton = content.querySelector(".new-card-popup__close-button");
 const formNewCard = content.querySelector(".form-new-card");
+const novoCard = content.querySelector(".new-card-popup");
+const formSubmitButton = novoCard.querySelector(".form__submit-button");
 const cards = content.querySelector(".elements");
 const deleteCard = content.querySelector(".card__delete-button");
 const imagePopup = content.querySelector(".image-popup");
 const closeImagePopup = content.querySelector(".image-popup__close-button");
+const popup1 = content.querySelector(".popup");
+const popup2 = content.querySelector(".new-card-popup");
+const submitButton1 = popup1.querySelector(".form");
+const submitButton2 = popup2.querySelector(".form");
+
 
 const initialCards = [
   {
@@ -43,8 +52,29 @@ const initialCards = [
   }
 ];
 
+function togglePopup(item, className) {
+  if(item.classList.contains(className)) {
+    item.classList.remove(className);
+    formReset();
+  } else {
+    item.classList.add(className);
+  }
+}
+
 function handlePopup() {
-  popup.classList.toggle("popup_opened");
+  togglePopup(popup, "popup_opened");
+
+  window.addEventListener("click", (evt) => {
+    if (evt.target === popup) {
+      popup.classList.remove("popup_opened");
+    }
+  });
+
+  window.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      popup.classList.remove("popup_opened");
+    }
+  });
 
   const nome = document.querySelector(".form__input_type_name");
   const atividade = document.querySelector(".form__input_type_activity");
@@ -66,29 +96,53 @@ function handleSaveChanges(evt) {
   profileName.textContent = nome.value;
   profileActivity.textContent = atividade.value;
 
-  handlePopup();
+  togglePopup(popup, "popup_opened");
 }
 
 function handleNewCardPopup() {
-  newCardPopup.classList.toggle("new-card-popup_opened");
+  togglePopup(newCardPopup, "new-card-popup_opened");
 
-  const titulo = document.querySelector(".form-new-card__input_type_title");
-  const url = document.querySelector(".form-new-card__input_type_url");
+  window.addEventListener("click", (evt) => {
+    if (evt.target == newCardPopup) {
+      newCardPopup.classList.remove("new-card-popup_opened");
+    }
+  });
+
+  window.addEventListener("keydown", (evt) => {
+    if (evt.key == "Escape") {
+      newCardPopup.classList.remove("new-card-popup_opened");
+    }
+  });
+
+  const titulo = document.querySelector(".form__input_type_title");
+  const url = document.querySelector(".form__input_type_url");
 
   titulo.value = "";
   url.value = "";
 }
 
 function handleImagePopup() {
-  imagePopup.classList.toggle("image-popup_opened");
+  togglePopup(imagePopup, "image-popup_opened");
+
+  window.addEventListener("click", (evt) => {
+    if (evt.target == imagePopup) {
+      imagePopup.classList.remove("image-popup_opened");
+    }
+  });
+
+  window.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      imagePopup.classList.remove("image-popup_opened");
+    }
+  });
 }
 
 function handleNewCard(evt) {
 
   evt.preventDefault();
 
-  const titulo = document.querySelector(".form-new-card__input_type_title");
-  const url = document.querySelector(".form-new-card__input_type_url");
+  const titulo = document.querySelector(".form__input_type_title");
+  const url = document.querySelector(".form__input_type_url");
 
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
@@ -152,8 +206,8 @@ loadInitialCards(initialCards);
 
 editButton.addEventListener('click', handlePopup);
 closePopupButton.addEventListener('click', handlePopup);
-form.addEventListener('submit', handleSaveChanges)
+submitButton1.addEventListener('submit', handleSaveChanges)
 newCard.addEventListener('click', handleNewCardPopup);
 closeNewCardPopupButton.addEventListener('click', handleNewCardPopup);
-formNewCard.addEventListener('submit', handleNewCard);
 closeImagePopup.addEventListener('click', handleImagePopup);
+submitButton2.addEventListener('submit', handleNewCard);

@@ -46,7 +46,7 @@
     column-gap: 10px;
     row-gap: 14px;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: 22px auto;
+    grid-template-rows: auto auto;
     margin: 0 auto;
     margin-bottom: 36px;
   }
@@ -69,8 +69,8 @@
     border: 0;
     padding: 0;
     margin: 0;
-    vertical-align: bottom;
-    align-self: flex-end;
+    vertical-align: middle;
+    align-self: center;
     cursor: pointer;
   }
 
@@ -114,7 +114,7 @@
     column-gap: 18px;
     row-gap: 16px;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: 39px auto;
+    grid-template-rows: auto auto;
     margin: 0;
     max-width: calc(880px - 330px);
   }
@@ -137,8 +137,8 @@
     border: 0;
     padding: 0;
     margin: 0;
-    vertical-align: bottom;
-    align-self: flex-end;
+    vertical-align: middle;
+    align-self: center;
   }
 
   .profile__info-activity{

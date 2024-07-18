@@ -33,9 +33,9 @@
   caret-color: #000000;
 }
 
-/* .form-new-card__input::placeholder {
+.form-new-card__input::placeholder {
   color: #000000;
-} */
+}
 
 .form-new-card__submit-button {
   border-radius: 2px;
