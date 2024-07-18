@@ -61,7 +61,9 @@ function togglePopup(item, className) {
   }
 }
 
-function handlePopup() {
+function handlePopup(evt) {
+  evt.preventDefault();
+
   togglePopup(popup, "popup_opened");
 
   window.addEventListener("click", (evt) => {
@@ -83,7 +85,7 @@ function handlePopup() {
 
     nome.value = profileName.textContent;
     atividade.value = profileActivity.textContent;
-  }
+    }
 }
 
 function handleSaveChanges(evt) {
@@ -99,7 +101,8 @@ function handleSaveChanges(evt) {
   togglePopup(popup, "popup_opened");
 }
 
-function handleNewCardPopup() {
+function handleNewCardPopup(evt) {
+  evt.preventDefault();
   togglePopup(newCardPopup, "new-card-popup_opened");
 
   window.addEventListener("click", (evt) => {
@@ -211,3 +214,15 @@ newCard.addEventListener('click', handleNewCardPopup);
 closeNewCardPopupButton.addEventListener('click', handleNewCardPopup);
 closeImagePopup.addEventListener('click', handleImagePopup);
 submitButton2.addEventListener('submit', handleNewCard);
+
+function pressedEnter(evt) {
+
+  if (evt.key === "Enter") {
+    evt.preventDefault();
+  }
+}
+
+document.querySelector(".form__input_type_name").addEventListener("keydown", pressedEnter);
+document.querySelector(".form__input_type_activity").addEventListener("keydown", pressedEnter);
+document.querySelector(".form__input_type_title").addEventListener("keydown", pressedEnter);
+document.querySelector(".form__input_type_url").addEventListener("keydown", pressedEnter);

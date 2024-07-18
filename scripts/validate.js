@@ -27,10 +27,8 @@
   };
 
   const toggleButtonState = (inputList, buttonElement) => {
-    console.log(hasInvalidInput(inputList));
     if (hasInvalidInput(inputList)) {
       buttonElement.classList.add("form__submit-button_inactive");
-      console.log(buttonElement);
     } else {
       buttonElement.classList.remove("form__submit-button_inactive");
     }
