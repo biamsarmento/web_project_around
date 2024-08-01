@@ -2,25 +2,9 @@ const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
 const profileName = content.querySelector(".profile__info-title");
 const profileActivity = content.querySelector(".profile__info-activity");
-const submitButton = content.querySelector(".popup__submit-button");
-const closePopupButton = content.querySelector(".popup__close-button");
 const popup = content.querySelector(".popup");
-const likes = content.querySelectorAll(".card__tag-like");
-const form = content.querySelector(".form");
-const newCard = content.querySelector(".profile__add-button");
 const newCardPopup = content.querySelector(".new-card-popup");
-const closeNewCardPopupButton = content.querySelector(".new-card-popup__close-button");
-const formNewCard = content.querySelector(".form-new-card");
-const novoCard = content.querySelector(".new-card-popup");
-const formSubmitButton = novoCard.querySelector(".form__submit-button");
-const cards = content.querySelector(".elements");
-const deleteCard = content.querySelector(".card__delete-button");
 const imagePopup = content.querySelector(".image-popup");
-const closeImagePopup = content.querySelector(".image-popup__close-button");
-const popup1 = content.querySelector(".popup");
-const popup2 = content.querySelector(".new-card-popup");
-const submitButton1 = popup1.querySelector(".form");
-const submitButton2 = popup2.querySelector(".form");
 
 export function togglePopup(item, className) {
   if(item.classList.contains(className)) {
@@ -109,5 +93,3 @@ export function handleImagePopup() {
     }
   });
 }
-
-// export {togglePopup, handleSaveChanges, handleImagePopup, handleNewCardPopup, handlePopup};
