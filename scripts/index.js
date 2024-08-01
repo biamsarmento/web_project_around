@@ -1,7 +1,6 @@
-import * as FormValidator from "./FormValidator.js";
 import * as Popups from './utils.js';
-import { formReset } from './validate.js';
 import {Card} from "./Card.js";
+import {FormValidator} from "./FormValidator.js";
 
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
@@ -256,3 +255,19 @@ document.querySelector(".form__input_type_name").addEventListener("keydown", pre
 document.querySelector(".form__input_type_activity").addEventListener("keydown", pressedEnter);
 document.querySelector(".form__input_type_title").addEventListener("keydown", pressedEnter);
 document.querySelector(".form__input_type_url").addEventListener("keydown", pressedEnter);
+
+const formConfig = {
+  formSelector: '.form', // Seletor para os formulários
+  inputSelector: '.form__input', // Seletor para os campos de entrada
+  submitButtonSelector: '.form__submit-button', // Seletor para o botão de envio
+  inactiveButtonClass: 'form__submit-button_inactive', // Classe para botão desabilitado
+  inputErrorClass: 'form__input_type_error', // Classe para campo de entrada com erro
+  errorClass: 'form__input-error_active' // Classe para tornar o erro visível
+};
+
+const formList = Array.from(document.querySelectorAll(".form"));
+
+formList.forEach((item) => {
+  const form = new FormValidator(formConfig, item);
+  form.enableValidation();
+});
