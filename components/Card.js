@@ -1,4 +1,3 @@
-import * as Popups from './utils.js';
 import PopupWithImage from './PopupWithImage.js';
 
 const content = document.querySelector(".content");

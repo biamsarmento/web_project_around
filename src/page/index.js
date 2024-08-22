@@ -1,35 +1,13 @@
-import {Card} from "./Card.js";
-import {FormValidator} from "./FormValidator.js";
-import PopupWithForm from './PopupWithForm.js';
-import Section from './Section.js';
-import UserInfo from './UserInfo.js';
-
-// Apagar não usados
+import {Card} from "../../components/Card.js";
+import {FormValidator} from "../../components/FormValidator.js";
+import PopupWithForm from '../../components/PopupWithForm.js';
+import Section from '../../components/Section.js';
+import UserInfo from '../../components/UserInfo.js';
 
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
-const profileName = content.querySelector(".profile__info-title");
-const profileActivity = content.querySelector(".profile__info-activity");
-const submitButton = content.querySelector(".profile-popup__submit-button");
-const closePopupButton = content.querySelector(".profile-popup__close-button");
 export const popup = content.querySelector(".profile-popup");
-const likes = content.querySelectorAll(".card__tag-like");
-const form = content.querySelector(".form");
 const newCard = content.querySelector(".profile__add-button");
-//export const newCardPopup = content.querySelector(".new-card-popup");
-const closeNewCardPopupButton = content.querySelector(".new-card-popup__close-button");
-const formNewCard = content.querySelector(".form-new-card");
-const novoCard = content.querySelector(".new-card-popup");
-const formSubmitButton = novoCard.querySelector(".form__submit-button");
-const cards = content.querySelector(".elements");
-const deleteCard = content.querySelector(".card__delete-button");
-//const imagePopup = content.querySelector(".image-popup");
-const closeImagePopup = content.querySelector(".image-popup__close-button");
-const popup1 = content.querySelector(".profile-popup");
-const popup2 = content.querySelector(".new-card-popup");
-const submitButton1 = popup1.querySelector(".form");
-const submitButton2 = popup2.querySelector(".form");
-
 const elements = ".elements";
 
 
@@ -75,8 +53,6 @@ formList.forEach((item) => {
   form.enableValidation();
 });
 
-
-// Checar aqui!
 const firstCards = new Section({ items: initialCards, renderer: (item) => {
 
   const card = new Card(item);
@@ -86,8 +62,6 @@ const firstCards = new Section({ items: initialCards, renderer: (item) => {
 } }, elements);
 
 firstCards.renderer();
-
-// Arrumar a partir daqui
 
 const userInfo = new UserInfo({userName: '.profile__info-title', userActivity: '.profile__info-activity'});
 
@@ -125,8 +99,6 @@ newCard.addEventListener('click', () => {
   newCardPopup.open();
 });
 
-// A partir daqui está OK
-
 function pressedEnter(evt) {
 
   if (evt.key === "Enter") {
@@ -138,18 +110,3 @@ document.querySelector(".form__input_type_name").addEventListener("keydown", pre
 document.querySelector(".form__input_type_activity").addEventListener("keydown", pressedEnter);
 document.querySelector(".form__input_type_title").addEventListener("keydown", pressedEnter);
 document.querySelector(".form__input_type_url").addEventListener("keydown", pressedEnter);
-
-// const formConfig = {
-//   formSelector: '.form',
-//   inputSelector: '.form__input',
-//   submitButtonSelector: '.form__submit-button',
-//   inactiveButtonClass: 'form__submit-button_inactive',
-//   errorClass: 'form__input-error_active'
-// };
-
-// const formList = Array.from(document.querySelectorAll(".form"));
-
-// formList.forEach((item) => {
-//   const form = new FormValidator(formConfig, item);
-//   form.enableValidation();
-// });
