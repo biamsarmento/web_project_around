@@ -8,9 +8,6 @@ Também podemos acrescentar e deletar fotos ná página clicando no botão + e n
 Acrescentamos, também, a funcionalidade de fechar os popup clicando fora dele ou então apertando em Esc.
 Os formulários agora passam por uma validação e o botão "Salvar" so funciona quando tudo está válido.
 Agora esse projeto foi devidamente organizado e classes foram criadas após aprendermos POO.
-
-Neste projeto aprendendo aprendemos um pouco de JavaScript e aprendemos a fazer alguns itens interativos. 
-Também aprendemos a acrescentar elementos no site usando um template e manipulação de DOM.
-O que mais aprendemos nessa Sprint foi a fazer a validação de formulário usando Java Script.
+A mais nova atualização desse código não altera o seu funcionamento, mas nessa Sprint nós aprofundamos ainda mais o nosso conhecimento em POO. Várias classes novas foram criadas e implementadas e ainda por cima usamos Node para carregar o projeto automaticamente.
 
 Link para o projeto: https://biamsarmento.github.io/web_project_around/

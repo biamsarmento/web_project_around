@@ -1,11 +1,11 @@
 import * as Popups from './utils.js';
+import PopupWithImage from './PopupWithImage.js';
 
 const content = document.querySelector(".content");
 
 export class Card {
   constructor(data) {
     this._title = data.title;
-    console.log(data.title);
     this._link = data.link;
   }
 
@@ -27,11 +27,7 @@ export class Card {
     });
 
     this._element.querySelector(".card__image-link").addEventListener("click", () => {
-      Popups.handleImagePopup();
-      const image = content.querySelector(".image-popup__picture");
-      image.src = this._element.querySelector(".card__image").src;
-      const title = content.querySelector(".image-popup__title");
-      title.textContent = this._element.querySelector(".card__tag-title").textContent;
+      this.handleCardClick();
     });
 
     this._element.querySelector(".card__delete-button").addEventListener("click", () => {
@@ -48,5 +44,11 @@ export class Card {
     this._element.querySelector(".card__image").alt = this._title;
 
     return this._element;
+  }
+
+  handleCardClick() {
+    const imagePopup = new PopupWithImage("image-popup");
+    imagePopup.open(this._title, this._link);
+    imagePopup.setEventListeners();
   }
 }

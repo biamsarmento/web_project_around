@@ -27,11 +27,11 @@
         </div>
       </header>
       <main class="content">
-        <section class="popup" id="popup">
-          <div class="popup__container">
-            <button class="popup__close-button"></button>
-            <h2 class="popup__title">Editar Perfil</h2>
-            <form class="popup__form form" name="formPopup" novalidate>
+        <section class="profile-popup" id="profile-popup">
+          <div class="profile-popup__container">
+            <button class="profile-popup__close-button"></button>
+            <h2 class="profile-popup__title">Editar Perfil</h2>
+            <form class="profile-popup__form form" name="formPopup" novalidate>
               <fieldset class="form__fieldset">
                 <input type="text" class="form__input form__input_type_name" id="nome" name="nome" value="Jacques Cousteau" minlength="2" maxlength="40" required>
                 <span class="form__input-error nome-error"></span>
@@ -48,9 +48,9 @@
             <h2 class="new-card-popup__title">Novo local</h2>
             <form class="new-card-popup__form form" name="formNewCard" novalidate>
               <fieldset class="form__fieldset">
-                <input type="text" class="form__input form__input_type_title" id="titulo" name="titulo" placeholder="Title" minlength="2" maxlength="30" required>
+                <input type="text" class="form__input form__input_type_title" id="titulo" name="title" placeholder="Title" minlength="2" maxlength="30" required>
                 <span class="form__input-error titulo-error"></span>
-                <input type="url" class="form__input form__input_type_url" id="url" name="url" placeholder="Image URL" required>
+                <input type="url" class="form__input form__input_type_url" id="url" name="link" placeholder="Image URL" required>
                 <span class="form__input-error url-error"></span>
                 <button type="submit" class="form__submit-button">Salvar</button>
               </fieldset>
@@ -59,7 +59,6 @@
         </section>
         <section class="image-popup" id="image-popup">
           <div class="image-popup__container">
-            <!-- Pra mim também está funcionando... https://imgur.com/fAcBwkk -->
             <img class="image-popup__picture">
             <p class="image-popup__title"></p>
             <button class="image-popup__close-button"></button>
