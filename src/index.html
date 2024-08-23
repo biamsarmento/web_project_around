@@ -8,7 +8,7 @@
     <meta name="keywords" content="Around, World, Like, Pictures">
     <title>My Homeland</title>
     <link rel="shortcut icon" href="../favicon.ico" />
-    <link rel="stylesheet" href="./page/index.css" />
+    <!-- <link rel="stylesheet" href="./page/index.css" /> -->
   </head>
   <body>
     <div class="page">
@@ -17,7 +17,7 @@
           <nav class="nav">
             <a class="nav__logo-link" href="#">
               <img
-                src="../images/Vector.svg"
+                src="<%=require('../images/Vector.svg')%>"
                 alt="Logo Around The US"
                 class="nav__logo"
               />
@@ -66,7 +66,7 @@
         </section>
         <section class="profile" id="profile">
           <img
-            src="../images/Avatar.png"
+            src="<%=require('../images/Avatar.png')%>"
             alt="Avatar Image"
             class="profile__avatar"
           />
@@ -98,6 +98,6 @@
         </div>
       </div>
     </template>
-    <script type="module" src="./page/index.js"></script>
+    <!-- <script type="module" src="./page/index.js"></script> -->
   </body>
 </html>

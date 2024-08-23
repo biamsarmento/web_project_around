@@ -3,6 +3,7 @@ import {FormValidator} from "../../components/FormValidator.js";
 import PopupWithForm from '../../components/PopupWithForm.js';
 import Section from '../../components/Section.js';
 import UserInfo from '../../components/UserInfo.js';
+import "./index.css";
 
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
