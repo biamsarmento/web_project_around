@@ -4,6 +4,7 @@ import PopupWithForm from '../../components/PopupWithForm.js';
 import Section from '../../components/Section.js';
 import UserInfo from '../../components/UserInfo.js';
 import "./index.css";
+import Api from "../../components/API.js";
 
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
@@ -63,6 +64,22 @@ const firstCards = new Section({ items: initialCards, renderer: (item) => {
 } }, elements);
 
 firstCards.renderer();
+
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-13",
+  headers: {
+    authorization: "4fe5fb1a-9a42-4631-9f7e-39eb49951a0f",
+    "Content-Type": "application/json"
+  }
+});
+
+api.getInitialCards()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err); // registra o erro no console
+  });
 
 const userInfo = new UserInfo({userName: '.profile__info-title', userActivity: '.profile__info-activity'});
 

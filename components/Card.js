@@ -1,4 +1,5 @@
 import PopupWithImage from './PopupWithImage.js';
+import PopupWithConfirmation from './PopupWithConfirmation.js';
 
 const content = document.querySelector(".content");
 
@@ -29,8 +30,13 @@ export class Card {
       this.handleCardClick();
     });
 
-    this._element.querySelector(".card__delete-button").addEventListener("click", () => {
-      this._element.remove();
+    this._element.querySelector(".card__delete-button").addEventListener("click", (evt) => {
+      // Abrir delete-popup
+      // document.querySelector("#delete-popup").classList.add("delete-popup_opened");
+      const popupConf = new PopupWithConfirmation("delete-popup");
+      popupConf.open();
+      popupConf.setEventListeners(evt.target.closest('.card'));
+      // this._element.remove();
     });
   }
 
