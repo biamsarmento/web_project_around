@@ -68,6 +68,19 @@
             </form>
           </div>
         </section>
+        <section class="edit-profile-pic-popup" id="edit-profile-pic-popup">
+          <div class="edit-profile-pic-popup__container">
+            <button class="edit-profile-pic-popup__close-button"></button>
+            <h2 class="edit-profile-pic-popup__title">Alterar a foto do perfil</h2>
+            <form class="edit-profile-pic-popup__form form" name="formEditProfilePic" novalidate>
+              <fieldset class="form__fieldset">
+                <input type="url" class="form__input form__input_type_url" id="url" name="link-edit-profile-pic" placeholder="https://somewebsite.com/someimage.jpg" required>
+                <span class="form__input-error url-error"></span>
+                <button type="submit" class="form__submit-button">Salvar</button>
+              </fieldset>
+            </form>
+          </div>
+        </section>
         <section class="image-popup" id="image-popup">
           <div class="image-popup__container">
             <img class="image-popup__picture">
@@ -76,11 +89,14 @@
           </div>
         </section>
         <section class="profile" id="profile">
-          <img
+          <button class="profile__avatar_button">
+            <img src="<%=require('../images/EditSign.png')%>" alt="Edit Sign" class="profile__avatar_edit">
+            <img
             src="<%=require('../images/Avatar.png')%>"
             alt="Avatar Image"
             class="profile__avatar"
-          />
+            />
+          </button>
           <div class="profile__info">
             <h1 class="profile__info-title">Jacques Cousteau</h1>
             <button class="profile__info-edit-button"></button>
@@ -106,6 +122,7 @@
         <div class="card__tag">
           <p class="card__tag-title"></p>
           <button class="card__tag-like"></button>
+          <p class="card__tag-like-count"></p>
         </div>
       </div>
     </template>

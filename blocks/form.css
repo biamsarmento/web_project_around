@@ -63,7 +63,7 @@
   width: 100%;
 }
 
-.form__input-error_active:last-of-type {
+.form__input-error_active:nth-of-type(2) {
   top: 85px;
 }
 

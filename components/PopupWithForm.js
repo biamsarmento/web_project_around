@@ -14,8 +14,6 @@ export default class PopupWithForm extends Popup {
     }
 
     document.querySelector(`.${this._popupSelector}`).classList.remove(`${this._popupSelector}_opened`);
-
-    // Isso tá funcionando? Acho que tem algo aqui
   }
 
   setEventListeners() {

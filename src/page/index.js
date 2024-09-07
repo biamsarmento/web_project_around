@@ -3,6 +3,7 @@ import {FormValidator} from "../../components/FormValidator.js";
 import PopupWithForm from '../../components/PopupWithForm.js';
 import Section from '../../components/Section.js';
 import UserInfo from '../../components/UserInfo.js';
+import UserProfilePic from '../../components/UserProfilePic.js';
 import "./index.css";
 import Api from "../../components/API.js";
 
@@ -11,6 +12,7 @@ const editButton = content.querySelector(".profile__info-edit-button");
 export const popup = content.querySelector(".profile-popup");
 const newCard = content.querySelector(".profile__add-button");
 const elements = ".elements";
+const editProfilePicButton = content.querySelector(".profile__avatar_button");
 
 
 const initialCards = [
@@ -82,7 +84,7 @@ api.getInitialCards()
   });
 
 const userInfo = new UserInfo({userName: '.profile__info-title', userActivity: '.profile__info-activity'});
-
+const userProfilePicInfo = new UserProfilePic('.profile__avatar');
 
 const profilePopup = new PopupWithForm("profile-popup", (inputValues) => {
 
@@ -101,8 +103,17 @@ const newCardPopup = new PopupWithForm("new-card-popup", (inputValues) => {
   return true;
 });
 
+const editProfilePicPopup = new PopupWithForm("edit-profile-pic-popup", (inputValue) => {
+
+  console.log(inputValue);
+  userProfilePicInfo.setUserProfilePic(inputValue);
+
+  return true;
+});
+
 profilePopup.setEventListeners();
 newCardPopup.setEventListeners();
+editProfilePicPopup.setEventListeners();
 
 editButton.addEventListener('click', () => {
 
@@ -115,6 +126,11 @@ editButton.addEventListener('click', () => {
 newCard.addEventListener('click', () => {
 
   newCardPopup.open();
+});
+
+editProfilePicButton.addEventListener('click', () => {
+
+  editProfilePicPopup.open();
 });
 
 function pressedEnter(evt) {
