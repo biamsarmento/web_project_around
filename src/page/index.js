@@ -5,7 +5,7 @@ import Section from '../../components/Section.js';
 import UserInfo from '../../components/UserInfo.js';
 import UserProfilePic from '../../components/UserProfilePic.js';
 import "./index.css";
-import Api from "../../components/API.js";
+import Api from "../../components/Api.js";
 
 const content = document.querySelector(".content");
 const editButton = content.querySelector(".profile__info-edit-button");
@@ -77,10 +77,21 @@ const api = new Api({
 
 api.getInitialCards()
   .then((result) => {
-    console.log(result);
+    console.log("Resultados:", result);
   })
   .catch((err) => {
-    console.log(err); // registra o erro no console
+    console.error("Erro ao obter cartões iniciais:", err);
+  });
+
+api.getUserInfo()
+  .then((result) => {
+    // console.log("User Info:", result);
+    document.querySelector(".profile__info-title").textContent = result.name;
+    document.querySelector(".profile__info-activity").textContent = result.about;
+    document.querySelector(".profile__avatar").src = result.avatar;
+  })
+  .catch((err) => {
+    console.error("Erro ao obter Usrr Info:", err);
   });
 
 const userInfo = new UserInfo({userName: '.profile__info-title', userActivity: '.profile__info-activity'});

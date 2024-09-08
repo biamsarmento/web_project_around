@@ -13,11 +13,14 @@ export default class Api {
     })
       .then(res => {
         if (res.ok) {
-          console.log(res.json());
           return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
         }
-        // se o servidor retornar um erro, rejeite a promessa
-        return Promise.reject(`Error: ${res.status}`);
+      })
+      .then(data => {
+        console.log("Dados retornados pela API:", data); // Verifique o que a API está retornando
+        return data;
       });
   }
 
@@ -30,11 +33,10 @@ export default class Api {
     })
       .then(res => {
         if (res.ok) {
-          console.log(res.json());
           return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
         }
-        // se o servidor retornar um erro, rejeite a promessa
-        return Promise.reject(`Error: ${res.status}`);
       });
   }
 
