@@ -40,7 +40,7 @@ export default class Api {
       });
   }
 
-  editProfile(name, about) {
+  editProfile({name, about}) {
     return fetch(`${this.baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
@@ -54,15 +54,34 @@ export default class Api {
     })
       .then(res => {
         if (res.ok) {
-          console.log(res.json());
           return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
         }
-        // se o servidor retornar um erro, rejeite a promessa
-        return Promise.reject(`Error: ${res.status}`);
       });
   }
 
-  addCard(name, link) {
+  editProfilePicture({linkEditProfilePic}) {
+    return fetch(`${this.baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: {
+        authorization: this.headers.authorization,
+        "Content-Type": this.headers["Content-Type"],
+      },
+      body: JSON.stringify({
+        avatar: linkEditProfilePic,
+      })
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      });
+  }
+
+  addCard({name, link}) {
     return fetch(`${this.baseUrl}/cards`, {
       method: "POST",
       headers: {
@@ -74,5 +93,29 @@ export default class Api {
         link: link
       })
     })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      });
+  }
+
+  deleteCard(cardId) {
+    return fetch(`${this.baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: {
+        authorization: this.headers.authorization,
+        // "Content-Type": this.headers["Content-Type"],
+      }
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      });
   }
 }

@@ -21,7 +21,6 @@ export class FormValidator {
   _checkInputValidity = (inputElement) => {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
-      console.log(inputElement.validity.valid);
     } else {
       this._hideInputError(inputElement);
     }
@@ -53,9 +52,6 @@ export class FormValidator {
   };
 
   enableValidation = () => {
-
-    // const inputList = Array.from(this._formElement.querySelectorAll(this._config.inputSelector));
-    // const buttonElement = this._formElement.querySelector(this._config.submitButtonSelector);
 
     this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();

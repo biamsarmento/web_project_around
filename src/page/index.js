@@ -17,27 +17,27 @@ const editProfilePicButton = content.querySelector(".profile__avatar_button");
 
 const initialCards = [
   {
-    title: "Vale de Yosemite",
+    name: "Vale de Yosemite",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
   },
   {
-    title: "Lago Louise",
+    name: "Lago Louise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
   },
   {
-    title: "Montanhas Carecas",
+    name: "Montanhas Carecas",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
   },
   {
-    title: "Latemar",
+    name: "Latemar",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
   },
   {
-    title: "Parque Nacional da Vanoise ",
+    name: "Parque Nacional da Vanoise ",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
   },
   {
-    title: "Lago di Braies",
+    name: "Lago di Braies",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
   }
 ];
@@ -57,15 +57,15 @@ formList.forEach((item) => {
   form.enableValidation();
 });
 
-const firstCards = new Section({ items: initialCards, renderer: (item) => {
+const Cartoes = new Section({ items: initialCards, renderer: (item) => {
 
   const card = new Card(item);
   const cardElement = card.generateCard();
-  firstCards.addItem(cardElement);
+  Cartoes.addItem(cardElement);
 
 } }, elements);
 
-firstCards.renderer();
+// Cartoes.renderer();
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-13",
@@ -78,6 +78,11 @@ const api = new Api({
 api.getInitialCards()
   .then((result) => {
     console.log("Resultados:", result);
+    result.forEach(item => {
+      const card = new Card(item);
+      const cardElement = card.generateCard();
+      Cartoes.addItem(cardElement);
+    })
   })
   .catch((err) => {
     console.error("Erro ao obter cartões iniciais:", err);
@@ -85,7 +90,6 @@ api.getInitialCards()
 
 api.getUserInfo()
   .then((result) => {
-    // console.log("User Info:", result);
     document.querySelector(".profile__info-title").textContent = result.name;
     document.querySelector(".profile__info-activity").textContent = result.about;
     document.querySelector(".profile__avatar").src = result.avatar;
@@ -100,6 +104,8 @@ const userProfilePicInfo = new UserProfilePic('.profile__avatar');
 const profilePopup = new PopupWithForm("profile-popup", (inputValues) => {
 
   userInfo.setUserInfo(inputValues);
+  console.log("InputValues:", inputValues);
+  api.editProfile(inputValues);
 
   return true;
 });
@@ -109,15 +115,17 @@ const newCardPopup = new PopupWithForm("new-card-popup", (inputValues) => {
   const card = new Card(inputValues);
   const cardElement = card.generateCard();
 
-  firstCards.addItem(cardElement);
+  Cartoes.addItem(cardElement);
+  api.addCard(inputValues);
 
   return true;
 });
 
 const editProfilePicPopup = new PopupWithForm("edit-profile-pic-popup", (inputValue) => {
 
-  console.log(inputValue);
-  userProfilePicInfo.setUserProfilePic(inputValue);
+  console.log(inputValue.linkEditProfilePic);
+  userProfilePicInfo.setUserProfilePic(inputValue.linkEditProfilePic);
+  api.editProfilePicture(inputValue);
 
   return true;
 });
@@ -130,8 +138,8 @@ editButton.addEventListener('click', () => {
 
   profilePopup.open();
   const novosValores = userInfo.getUserInfo();
-  document.querySelector(".form__input_type_name").value = novosValores.nome;
-  document.querySelector(".form__input_type_activity").value = novosValores.atividade;
+  document.querySelector(".form__input_type_name").value = novosValores.name;
+  document.querySelector(".form__input_type_activity").value = novosValores.about;
 });
 
 newCard.addEventListener('click', () => {

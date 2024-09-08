@@ -1,12 +1,14 @@
 import PopupWithImage from './PopupWithImage.js';
 import PopupWithConfirmation from './PopupWithConfirmation.js';
 
-const content = document.querySelector(".content");
+// const content = document.querySelector(".content");
 
 export class Card {
   constructor(data) {
-    this._title = data.title;
+    this._name = data.name;
     this._link = data.link;
+    this._id = data._id;
+    this._likes = data.likes;
   }
 
   _getTemplate() {
@@ -19,7 +21,6 @@ export class Card {
     return cardElement;
   }
 
-  // Continuar aqui
   _setEventListeners() {
 
     this._element.querySelector(".card__tag-like").addEventListener("click", (evt) => {
@@ -30,12 +31,10 @@ export class Card {
       this.handleCardClick();
     });
 
-    this._element.querySelector(".card__delete-button").addEventListener("click", (evt) => {
-      // Abrir delete-popup
-      // document.querySelector("#delete-popup").classList.add("delete-popup_opened");
+    this._element.querySelector(".card__delete-button").addEventListener("click", () => {
       const popupConf = new PopupWithConfirmation("delete-popup");
       popupConf.open();
-      popupConf.setEventListeners(evt.target.closest('.card'));
+      popupConf.setEventListeners(this._id);
       // this._element.remove();
     });
   }
@@ -44,16 +43,16 @@ export class Card {
     this._element = this._getTemplate();
     this._setEventListeners();
 
-    this._element.querySelector(".card__tag-title").textContent = this._title;
+    this._element.querySelector(".card__tag-title").textContent = this._name;
     this._element.querySelector(".card__image").src = this._link;
-    this._element.querySelector(".card__image").alt = this._title;
+    this._element.querySelector(".card__image").alt = this._name;
 
     return this._element;
   }
 
   handleCardClick() {
     const imagePopup = new PopupWithImage("image-popup");
-    imagePopup.open(this._title, this._link);
+    imagePopup.open(this._name, this._link);
     imagePopup.setEventListeners();
   }
 }

@@ -33,9 +33,9 @@
             <h2 class="profile-popup__title">Editar Perfil</h2>
             <form class="profile-popup__form form" name="formPopup" novalidate>
               <fieldset class="form__fieldset">
-                <input type="text" class="form__input form__input_type_name" id="nome" name="nome" value="Jacques Cousteau" minlength="2" maxlength="40" required>
+                <input type="text" class="form__input form__input_type_name" id="nome" name="name" value="Jacques Cousteau" minlength="2" maxlength="40" required>
                 <span class="form__input-error nome-error"></span>
-                <input type="text" class="form__input form__input_type_activity" id="atividade" name="atividade" value="Explorar" minlength="2" maxlength="200" required>
+                <input type="text" class="form__input form__input_type_activity" id="atividade" name="about" value="Explorar" minlength="2" maxlength="200" required>
                 <span class="form__input-error atividade-error"></span>
                 <button type="submit" class="form__submit-button">Salvar</button>
               </fieldset>
@@ -48,7 +48,7 @@
             <h2 class="new-card-popup__title">Novo local</h2>
             <form class="new-card-popup__form form" name="formNewCard" novalidate>
               <fieldset class="form__fieldset">
-                <input type="text" class="form__input form__input_type_title" id="titulo" name="title" placeholder="Title" minlength="2" maxlength="30" required>
+                <input type="text" class="form__input form__input_type_title" id="titulo" name="name" placeholder="Title" minlength="2" maxlength="30" required>
                 <span class="form__input-error titulo-error"></span>
                 <input type="url" class="form__input form__input_type_url" id="url" name="link" placeholder="Image URL" required>
                 <span class="form__input-error url-error"></span>
@@ -74,7 +74,7 @@
             <h2 class="edit-profile-pic-popup__title">Alterar a foto do perfil</h2>
             <form class="edit-profile-pic-popup__form form" name="formEditProfilePic" novalidate>
               <fieldset class="form__fieldset">
-                <input type="url" class="form__input form__input_type_url" id="url" name="link-edit-profile-pic" placeholder="https://somewebsite.com/someimage.jpg" required>
+                <input type="url" class="form__input form__input_type_url" id="url" name="linkEditProfilePic" placeholder="https://somewebsite.com/someimage.jpg" required>
                 <span class="form__input-error url-error"></span>
                 <button type="submit" class="form__submit-button">Salvar</button>
               </fieldset>
