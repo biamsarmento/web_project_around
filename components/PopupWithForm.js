@@ -33,11 +33,11 @@ export default class PopupWithForm extends Popup {
     const submitButton = this._popup.querySelector(".form");
     submitButton.addEventListener("submit", (evt) => {
       evt.preventDefault();
+
+      this._popup.querySelector(".form__submit-button").textContent = "Salvando...";
+
       const worked = this._handleFormSubmit(this._getInputValues());
 
-      if(worked) {
-        this.close();
-      }
     });
   }
 

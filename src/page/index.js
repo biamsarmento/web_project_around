@@ -104,8 +104,15 @@ const userProfilePicInfo = new UserProfilePic('.profile__avatar');
 const profilePopup = new PopupWithForm("profile-popup", (inputValues) => {
 
   userInfo.setUserInfo(inputValues);
-  console.log("InputValues:", inputValues);
-  api.editProfile(inputValues);
+  api.editProfile(inputValues)
+    .then(() => {
+      console.log("This:", this);
+      profilePopup.close();
+      profilePopup._popup.querySelector(".form__submit-button").textContent = "Salvar";
+    })
+    .catch((err) => {
+      console.error("Erro ao obter Usrr Info:", err);
+    });
 
   return true;
 });
@@ -116,16 +123,31 @@ const newCardPopup = new PopupWithForm("new-card-popup", (inputValues) => {
   const cardElement = card.generateCard();
 
   Cartoes.addItem(cardElement);
-  api.addCard(inputValues);
+  api.addCard(inputValues)
+    .then(() => {
+      console.log("This:", this);
+      newCardPopup.close();
+      newCardPopup._popup.querySelector(".form__submit-button").textContent = "Salvar";
+    })
+    .catch((err) => {
+      console.error("Erro ao obter Usrr Info:", err);
+    });
 
   return true;
 });
 
 const editProfilePicPopup = new PopupWithForm("edit-profile-pic-popup", (inputValue) => {
 
-  console.log(inputValue.linkEditProfilePic);
   userProfilePicInfo.setUserProfilePic(inputValue.linkEditProfilePic);
-  api.editProfilePicture(inputValue);
+  api.editProfilePicture(inputValue)
+    .then(() => {
+      console.log("This:", this);
+      editProfilePicPopup.close();
+      editProfilePicPopup._popup.querySelector(".form__submit-button").textContent = "Salvar";
+    })
+    .catch((err) => {
+      console.error("Erro ao obter Usrr Info:", err);
+    });
 
   return true;
 });

@@ -9,5 +9,6 @@ Acrescentamos, também, a funcionalidade de fechar os popup clicando fora dele o
 Os formulários agora passam por uma validação e o botão "Salvar" so funciona quando tudo está válido.
 Agora esse projeto foi devidamente organizado e classes foram criadas após aprendermos POO.
 A mais nova atualização desse código não altera o seu funcionamento, mas nessa Sprint nós aprofundamos ainda mais o nosso conhecimento em POO. Várias classes novas foram criadas e implementadas e ainda por cima usamos Node para carregar o projeto automaticamente.
+Nesta nova etapa do projeto passamos a consumir uma API para salvar algumas coisas. Conseguimos usar o banco de dados através de requests feitos com um token individual. Aprendemos a interpretar o status de um request assim como o objeto que recebemos como resposta.
 
 Link para o projeto: https://biamsarmento.github.io/web_project_around/
