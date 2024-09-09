@@ -57,6 +57,7 @@
   align-items: center;
   width: 246px;
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 .card__tag-title {
@@ -70,6 +71,20 @@
   white-space: nowrap;
   overflow: hidden;
   width: calc(246px - 21px);
+}
+
+.card__tag-likes {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 246px;
+  margin: 0 auto;
+  width: 21px;
+  height: 37px;
+  gap: 3px;
 }
 
 .card__tag-like {
@@ -98,7 +113,8 @@
   font-weight: 400;
   line-height: 15.73px;
   text-align: center;
-
+  margin: 0;
+  padding: 0;
 }
 
 .song__like {

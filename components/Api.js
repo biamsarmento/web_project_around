@@ -118,4 +118,38 @@ export default class Api {
         }
       });
   }
+
+  addLike(cardId) {
+    return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+      method: "PUT",
+      headers: {
+        authorization: this.headers.authorization,
+        // "Content-Type": this.headers["Content-Type"],
+      }
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      });
+  }
+
+  removeLike(cardId) {
+    return fetch(`${this.baseUrl}/cards/likes/${cardId}`, {
+      method: "DELETE",
+      headers: {
+        authorization: this.headers.authorization,
+        // "Content-Type": this.headers["Content-Type"],
+      }
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          return Promise.reject(`Error: ${res.status}`);
+        }
+      });
+  }
 }

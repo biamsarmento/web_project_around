@@ -23,7 +23,7 @@ export default class PopupWithConfirmation extends Popup {
 
     const submitButton = this._popup.querySelector(".form");
     submitButton.addEventListener("submit", (evt) => {
-      // evt.preventDefault();
+      evt.preventDefault();
 
       const api = new Api({
         baseUrl: "https://around.nomoreparties.co/v1/web-ptbr-cohort-13",
@@ -35,7 +35,14 @@ export default class PopupWithConfirmation extends Popup {
 
       console.log("CardId: ", cardId);
 
-      api.deleteCard(cardId);
+      console.log("CardId: ", cardId);
+      api.deleteCard(cardId)
+        .then(() => {
+          location.reload(true);
+        })
+        .catch((err) => {
+          console.error("Erro ao obter cartões iniciais:", err);
+        });
 
       this.close();
     });
