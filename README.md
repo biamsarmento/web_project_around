@@ -1,14 +1,40 @@
-# Triple Ten
-# Web Project Around
+# 📸 Project Around
 
-Esse site mostra um perfil de um usuário e mostra fotos postadas por este. Existe uma seção "profile" 
-que mostra o nome e uma descrição do usuário com um botão para editar o perfil e existe uma seção com as fotos postadas pelo usuário. 
-Em cada post há um texto e um botão de like, que ao ser clicado fica preenchido.
-Também podemos acrescentar e deletar fotos ná página clicando no botão + e no lixo, respectivamente.
-Acrescentamos, também, a funcionalidade de fechar os popup clicando fora dele ou então apertando em Esc.
-Os formulários agora passam por uma validação e o botão "Salvar" so funciona quando tudo está válido.
-Agora esse projeto foi devidamente organizado e classes foram criadas após aprendermos POO.
-A mais nova atualização desse código não altera o seu funcionamento, mas nessa Sprint nós aprofundamos ainda mais o nosso conhecimento em POO. Várias classes novas foram criadas e implementadas e ainda por cima usamos Node para carregar o projeto automaticamente.
-Nesta nova etapa do projeto passamos a consumir uma API para salvar algumas coisas. Conseguimos usar o banco de dados através de requests feitos com um token individual. Aprendemos a interpretar o status de um request assim como o objeto que recebemos como resposta.
+## 📖 About the Project
 
-Link para o projeto: https://biamsarmento.github.io/web_project_around/
+Around is an interactive photo-sharing platform that allows users to showcase their profiles and upload pictures.
+
+The website features:
+- A Profile section displaying the user's name, description, and an option to edit their details.
+- A Photo gallery, where users can add and delete posts.
+- Like functionality, where users can interact with posts.
+- Pop-up modals, which can be closed by clicking outside or pressing the Esc key.
+- Form validation, ensuring that data is correctly entered before submission.
+- The latest updates introduced Object-Oriented Programming (OOP) principles, optimizing the code structure and organization. Additionally, the project now integrates with an API, allowing data storage and retrieval using authenticated requests.
+
+## 🎯 Objective
+
+The main goal of this project was to create a dynamic and user-friendly photo-sharing platform while reinforcing JavaScript, OOP, and API integration skills. The project aimed to improve the user experience through interactive elements and a structured approach to data handling.
+
+## 🚀 Outcome
+
+Check out the final result:  
+- 🌎 **Live Website**: [Web Project Around](https://biamsarmento.github.io/web_project_around/)
+
+## 🛠️ Technologies and Tools Used
+
+- HTML
+- CSS
+- Java Script
+- Node
+
+## 📚 What I Learned
+
+This project helped me improve my Object-Oriented Programming (OOP) skills and provided hands-on experience with API consumption and database requests. Additionally, I refined my frontend development knowledge, including form validation, interactive UI components, and request handling.
+
+## 🔧 How to Run the Project
+
+### 📦 Cloning the Repository
+```bash
+git clone https://github.com/biamsarmento/web_project_around.git
+cd web_project_around
